@@ -40,7 +40,7 @@ def read_poetry():
     read_cnt+=1
     if read_cnt>=READ_CNT_MAX:
         read_cnt=0
-        i+=1
+        i=(i+1)%len(poetry_list)
         with open('idx.txt', 'wt') as index_file:
             print("%d" % i, file=index_file)
 
